@@ -61,11 +61,21 @@ usage python3 mqtt-file.py delete path_to_spiffs
 
 Example of use.   
 ```
+# Put README.md to SPIFFS
 $ python3 mqtt-file.py put README.md
+
+# SPIFFS file list
 $ python3 mqtt-file.py list
+
 $ mv README.md README.md.md
+
+# Get README.md from SPIFFS
 $ python3 mqtt-file.py get README.md
+
+# Compare two files
 $ diff README.md README.md.md
+
+# Delete README.md from SPIFFS
 $ python3 mqtt-file.py delete README.md
 ```
 
