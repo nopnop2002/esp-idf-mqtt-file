@@ -51,7 +51,7 @@ Specifies the username and password if the server requires a password when conne
 
 Run the following python script on the host side.
 ```
-$ python3 -mpip install paho-mqtt
+$ python3 -m pip install paho-mqtt
 $ python3 mqtt-file.py
 usage python3 mqtt-file.py put path_to_host
 usage python3 mqtt-file.py get path_to_spiffs
