@@ -52,6 +52,10 @@ Specifies the username and password if the server requires a password when conne
 Run the following python script on the host side.
 ```
 $ python3 -m pip install paho-mqtt
+
+$ vi mqtt-file.py
+Set the broker you will use.
+
 $ python3 mqtt-file.py
 usage python3 mqtt-file.py put path_to_host
 usage python3 mqtt-file.py get path_to_spiffs
