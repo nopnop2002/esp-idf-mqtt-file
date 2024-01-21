@@ -119,17 +119,11 @@ typedef enum {HEADER, TAILER, DATA} TYPE;
 /* Max length a file path can have on storage */
 #define FILE_PATH_MAX (ESP_VFS_PATH_MAX + CONFIG_SPIFFS_OBJ_NAME_LEN)
 
-static fpos_t getFileSize(char *fullPath) {
-	fpos_t fsize = 0;
-
-	FILE *fp = fopen(fullPath,"rb");
-	ESP_LOGD(TAG, "fullPath=[%s] fp=%p", fullPath, fp);
-	if (fp == NULL) return 0;
-	fseek(fp,0,SEEK_END);
-	fgetpos(fp,&fsize);
-	fclose(fp);
-	ESP_LOGD(TAG, "fgetpos fsize=%ld", fsize);
-	return fsize;
+static int getFileSize(char *fullPath) {
+	struct stat st;
+	if (stat(fullPath, &st) == 0)
+		return st.st_size;
+	return -1;
 }
 
 static void printDirectory(char * path) {
