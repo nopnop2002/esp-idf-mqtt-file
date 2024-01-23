@@ -137,8 +137,8 @@ static void printDirectory(char * path) {
 			strcpy(fullPath, path);
 			strcat(fullPath, "/");
 			strcat(fullPath, pe->d_name);
-			fpos_t fsize = getFileSize(fullPath);
-			ESP_LOGI(__FUNCTION__,"%s d_name=%s d_ino=%d fsize=%ld", path, pe->d_name, pe->d_ino, fsize);
+			int fsize = getFileSize(fullPath);
+			ESP_LOGI(__FUNCTION__,"%s d_name=%s d_ino=%d fsize=%d", path, pe->d_name, pe->d_ino, fsize);
 		}
 		if (pe->d_type == 2) {
 			char subDir[127];
