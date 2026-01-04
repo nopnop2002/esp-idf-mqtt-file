@@ -70,6 +70,7 @@ $ python3 mqtt-file.py put README.md
 
 # SPIFFS file list
 $ python3 mqtt-file.py list
+filename=README.md 2705
 
 $ mv README.md README.md.md
 
